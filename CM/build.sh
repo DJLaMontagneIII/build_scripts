@@ -12,7 +12,8 @@ if [ ! -z $MODE ]; then
        echo -e "${bldblu}Building clean ${txtrst}"
        make clobber;
     else
-        export IS_RELEASED_BUILD=
+        echo -e "${bldblu}Unset release build flag ${txtrst}"
+        unset IS_RELEASED_BUILD
     fi
 
     if [ $MODE == "d" ]; then
@@ -24,7 +25,8 @@ if [ ! -z $MODE ]; then
        rm out/target/product/bacon/*.md5sum;
     fi
 else
-    export IS_RELEASED_BUILD=
+    echo -e "${bldblu}Unset release build flag ${txtrst}"
+    unset IS_RELEASED_BUILD
 fi
 
 # Setup environment
