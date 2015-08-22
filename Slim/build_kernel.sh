@@ -6,9 +6,6 @@ txtrst=$(tput sgr0)             # Reset
 
 MODE="$1"
 
-# Time of build startup
-res1=$(date +%s.%N)
-
 # Reading mode
 if [ $MODE == "c" ]; then
    echo -e "${bldblu}Cleaning up out folder ${txtrst}"
