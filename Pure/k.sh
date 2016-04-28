@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Colorize and add text parameters
-bldblu=${txtbld}$(tput setaf 4) #  blue
+bldgrn=${txtbld}$(tput setaf 2) #  green
 txtrst=$(tput sgr0)             # Reset
 
 MODE="$1"
@@ -30,11 +30,11 @@ else
 fi
 
 # Setup environment
-echo -e "${bldblu}Setting up build environment ${txtrst}"
+echo -e "${bldgrn}Setting up build environment ${txtrst}"
 . build/envsetup.sh
 export USE_CCACHE=1
 lunch "nexus_shamu-user"
 
 # Start compilation
-echo -e "${bldblu}Building kernel for shamu ${txtrst}"
+echo -e "${bldgrn}Building kernel for shamu ${txtrst}"
 mka bootimage
